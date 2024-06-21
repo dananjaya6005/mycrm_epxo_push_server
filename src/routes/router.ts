@@ -18,8 +18,11 @@ router.post('/v1/push', (req, res) => {
     const {username} = req.body;
     const {expo_token} = req.body;
 
-    console.log('username', username);
-    console.log('expo_token', expo_token);
+    console.log('req.body', req.body);
+    
+
+    // console.log('username', username);
+    // console.log('expo_token', expo_token);
 
     if (!username || !expo_token) {
         return res.status(400).json({
