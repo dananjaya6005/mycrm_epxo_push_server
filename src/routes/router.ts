@@ -18,7 +18,7 @@ router.get('/api/cron-job', (req, res) => {
 
 router.post('/v1/push', async (req, res) => {
 
-    const { title, body,  } = req.body;
+    const { title, body, leadID , fullName , phone , leadOrigin  } = req.body;
     const usernames = req.body.users.split(',');
 
     console.log('usernames', usernames );
@@ -48,6 +48,13 @@ router.post('/v1/push', async (req, res) => {
                 to: expo_token,
                 title: title,
                 body: body,
+                data: { 
+                    url : "/callNotify",
+                    leadID : leadID,
+                    fullName : fullName,
+                    phone :  phone,
+                    leadOrigin : leadOrigin,
+                 },
               };
 
 
