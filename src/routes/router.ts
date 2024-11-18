@@ -27,7 +27,7 @@ router.post('/v1/push', async (req, res) => {
     console.log('req.body', req.body);
 
 
-    if (!title || !body || usernames.length === 0) {
+    if (!title ||  usernames.length === 0) {
         return res.status(400).json({
             success: false,
             message: 'Check fileds again or  at least one user is required',
